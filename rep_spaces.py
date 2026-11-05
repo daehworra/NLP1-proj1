@@ -63,6 +63,9 @@ class TF_IDF:
             idf[index] = np.log((self.document_count + 1) / (document_frequencies[index] + 1)) + 1
 
         return idf
+    
+    def __len__(self) -> int:
+        return len(self.vocab)
 
     def compute_term_frequencies(self, document):
         term_frequencies = np.zeros(len(self), dtype=np.float32)
